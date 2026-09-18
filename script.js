@@ -1,3 +1,22 @@
+// FUNCIÓN PARA MOSTRAR / OCULTAR CONTRASEÑA EN EL FORMULARIO DE ACCESO
+document.addEventListener('DOMContentLoaded', function() {
+    const btnToggle = document.getElementById('btn-toggle-password');
+    if (btnToggle) {
+        btnToggle.addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                btnToggle.textContent = 'OCULTAR';
+                btnToggle.style.background = '#0284c7';
+            } else {
+                passwordInput.type = 'password';
+                btnToggle.textContent = 'MOSTRAR';
+                btnToggle.style.background = '#475569';
+            }
+        });
+    }
+});
+
 const USUARIO_CORRECTO = "prestamos";
 const CONTRASENA_CORRECTA = "cotizacion26";
 
