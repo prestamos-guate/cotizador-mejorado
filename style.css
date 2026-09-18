@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 20px 10px;
     color: #e2e8f0;
 }
 
@@ -101,13 +101,12 @@ body {
     letter-spacing: 0.5px;
 }
 
-.summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
+.summary-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+    gap: 12px; 
     margin-bottom: 20px; 
 }
-
 .summary-card { background: #1f2937; padding: 15px; border-radius: 8px; border: 1px solid #374151;}
 .card-title { display: block; font-size: 11px; color: #9ca3af; margin-bottom: 8px; font-weight: 600;}
 .card-value { font-size: 16px; font-weight: bold; color: white; word-break: break-all;}
@@ -125,18 +124,59 @@ body {
     cursor: pointer;
     font-size: 14px;
     margin-top: 10px;
+    width: 100%;
 }
 #btn-whatsapp:hover { background: #22c55e; }
 
 /* TABLA ESTILO OSCURO */
 .table-section { margin-top: 35px; border-top: 1px solid #1f2937; padding-top: 25px;}
 .table-section h3 { font-size: 18px; margin-bottom: 15px; }
-.table-responsive { overflow-x: auto; }
+.table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-table { width: 100%; border-collapse: collapse; background: #1f2937; border-radius: 8px; overflow: hidden; font-size: 13px;}
+table { width: 100%; border-collapse: collapse; background: #1f2937; border-radius: 8px; overflow: hidden; font-size: 13px; white-space: nowrap;}
 th, td { padding: 12px 15px; text-align: left; }
 th { background: #111827; color: #9ca3af; font-weight: 500; border-bottom: 1px solid #374151; }
 td { color: #e5e7eb; border-bottom: 1px solid #374151; }
 tr:hover { background: #263346; cursor: pointer; }
 
 .hidden { display: none; }
+
+/* =========================================================
+   🛡️ EL CANDADO DUAL INTELIGENTE (ADAPTABILIDAD PARA CELULARES) 
+   ========================================================= */
+@media (max-width: 768px) {
+    body { padding: 10px 5px; }
+    
+    #app-screen { 
+        padding: 15px 10px; 
+        max-width: 100%; 
+    }
+    
+    .app-header { 
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 12px; 
+        text-align: center; 
+    }
+    .app-header h2 { font-size: 18px; }
+    .logout-button { width: 100%; }
+
+    #loan-form { 
+        grid-template-columns: 1fr; 
+        padding: 15px 10px; 
+    }
+
+    .button-group { 
+        grid-column: span 1; 
+        flex-direction: column; 
+        width: 100%; 
+    }
+    .button-group button { width: 100%; }
+
+    .summary-grid { 
+        grid-template-columns: 1fr; 
+        gap: 10px; 
+    }
+    
+    .client-badge { font-size: 11px; word-break: break-all; }
+}
