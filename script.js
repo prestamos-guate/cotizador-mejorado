@@ -1,19 +1,3 @@
-// FUNCIÓN PARA MOSTRAR / OCULTAR CONTRASEÑA EN EL FORMULARIO DE ACCESO
-document.getElementById('btn-toggle-password').addEventListener('click', function() {
-    const passwordInput = document.getElementById('password');
-    const btnToggle = document.getElementById('btn-toggle-password');
-    
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        btnToggle.textContent = 'OCULTAR';
-        btnToggle.style.background = '#0284c7';
-    } else {
-        passwordInput.type = 'password';
-        btnToggle.textContent = 'MOSTRAR';
-        btnToggle.style.background = '#475569';
-    }
-});
-
 const USUARIO_CORRECTO = "prestamos";
 const CONTRASENA_CORRECTA = "cotizacion26";
 
@@ -240,6 +224,25 @@ document.getElementById('records-table').addEventListener('dblclick', function(e
 
             summarySection.classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+});
+
+// FUNCIÓN PROTEGIDA PARA MOSTRAR CONTRASEÑA EN MÓVIL
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'btn-toggle-password') {
+        const passwordInput = document.getElementById('password');
+        const btnToggle = document.getElementById('btn-toggle-password');
+        if (passwordInput && btnToggle) {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                btnToggle.textContent = 'OCULTAR';
+                btnToggle.style.background = '#0284c7';
+            } else {
+                passwordInput.type = 'password';
+                btnToggle.textContent = 'MOSTRAR';
+                btnToggle.style.background = '#475569';
+            }
         }
     }
 });
