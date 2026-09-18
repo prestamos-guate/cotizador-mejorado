@@ -1,19 +1,16 @@
 // FUNCIÓN PARA MOSTRAR / OCULTAR CONTRASEÑA EN EL FORMULARIO DE ACCESO
-document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('btn-toggle-password').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
     const btnToggle = document.getElementById('btn-toggle-password');
-    if (btnToggle) {
-        btnToggle.addEventListener('click', function() {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                btnToggle.textContent = 'OCULTAR';
-                btnToggle.style.background = '#0284c7';
-            } else {
-                passwordInput.type = 'password';
-                btnToggle.textContent = 'MOSTRAR';
-                btnToggle.style.background = '#475569';
-            }
-        });
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        btnToggle.textContent = 'OCULTAR';
+        btnToggle.style.background = '#0284c7';
+    } else {
+        passwordInput.type = 'password';
+        btnToggle.textContent = 'MOSTRAR';
+        btnToggle.style.background = '#475569';
     }
 });
 
